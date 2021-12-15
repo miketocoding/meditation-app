@@ -11,8 +11,17 @@
   <body>
     <!-- .app then tab creates a div with class of app -->
     <div class="app">
+
+        <div class="vid-container">
+          <!-- to make this loop and run forever, add loop to video -->
+          <video loop>
+            <!-- specify type -->
+            <source src="./video/rain.mp4" type="video/mp4">
+          </video>
+        </div>
+
       <div class="time-select">
-        <!-- add data attribute to use in javascript - value  -->
+        <!-- add data attribute to use in javascript - value -->
         <button data-time="120">2 Minutes</button>
         <button data-time="300">5 Minutes</button>
         <button data-time="600">10 Minutes</button>
@@ -22,6 +31,7 @@
           <source src="./sounds/rain.mp3" />
         </audio>
         <img src="./svg/play.svg" alt="play" class="play" />
+        <!-- outline in html because we want to do things to it -->
         <svg
         class="track-outline"
           width="453"
@@ -38,6 +48,7 @@
             stroke-width="20"
           />
         </svg>
+        <!-- this is what will animate -->
         <svg
         class="moving-outline"
           width="453"
