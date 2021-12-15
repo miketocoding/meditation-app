@@ -10,7 +10,7 @@ const app = () => {
   // sounds - select all the sounds, use querySelectorAll and get all buttons
   const sounds = document.querySelectorAll('.sound-picker button')
   // time display - modify the h3 for time-display class
-  const timeDisplay = document.querySelectorAll('.time-display')
+  const timeDisplay = document.querySelector('.time-display')
   // timeSelect - get all the buttons from time-select
   const timeSelect = document.querySelectorAll('.time-select button')
   // get the length of the outline of the circle because we want to animate it
@@ -33,6 +33,7 @@ const app = () => {
 
   // select sound
   timeSelect.forEach(option => {
+    console.log('I am in time.select.forEach function')
     // use normal function here so we can use 'this'
     option.addEventListener('click', function() {
       // this will update the fake duration
@@ -45,6 +46,7 @@ const app = () => {
   // create a function specific to stop and play the sounds
   // paused is a property on song attribute
   const checkPlaying = song => {
+    console.log('i am in checkPlaying function')
     if(song.paused){
       song.play()
       video.play()
@@ -59,6 +61,7 @@ const app = () => {
   // we can animate the circle
   // every time the song plays the time updates
   song.ontimeupdate = () => {
+    console.log('i am in ontimeupdate function')
     // starts from 0 and increments until the song finishes
     let currentTime = song.currentTime
     let elapsed = fakeDuration - currentTime
