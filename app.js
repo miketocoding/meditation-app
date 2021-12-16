@@ -10,6 +10,8 @@ const app = () => {
   // sounds - select all the sounds, use querySelectorAll and get all buttons
   const sounds = document.querySelectorAll('.sound-picker button')
   // time display - modify the h3 for time-display class
+  // if using querySelectorAll, need to destructure
+  // const [timeDisplay] = document.querySelectorAll('.time-display')
   const timeDisplay = document.querySelector('.time-display')
   // timeSelect - get all the buttons from time-select
   const timeSelect = document.querySelectorAll('.time-select button')
@@ -75,6 +77,13 @@ const app = () => {
 
     // animate the text
     timeDisplay.textContent = `${minutes}:${seconds}`
+
+    if(currentTime >= fakeDuration) {
+      song.pause()
+      song.currentTime = 0
+      play.src = './svg/play.svg'
+      video.pause()
+    }
   }
 }
 
