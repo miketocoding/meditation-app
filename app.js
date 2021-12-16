@@ -27,6 +27,15 @@ const app = () => {
   // strokeDashoffset - will leave empty space
   outline.style.strokeDashoffset = outlineLength
 
+  // pick different sounds
+  sounds.forEach(sound => {
+    sound.addEventListener('click', function() {
+      song.src = this.getAttribute('data-sound')
+      video.src = this.getAttribute('data-video')
+      checkPlaying(song)
+    })
+  })
+
   // play sound
   // play icon, click
   play.addEventListener('click', () => {
